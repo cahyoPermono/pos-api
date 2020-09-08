@@ -1,0 +1,27 @@
+{
+  "name": "pos-api",
+  "version": "1.0.0",
+  "description": "POS Api For Widodo Shop",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cahyoPermono/pos-api.git"
+  },
+  "author": "Cahyo Permono",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cahyoPermono/pos-api/issues"
+  },
+  "homepage": "https://github.com/cahyoPermono/pos-api#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1"
+  }
+}
