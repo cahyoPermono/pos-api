@@ -1,3 +1,9 @@
+//import crypto for password
+const bcrypt = require("bcryptjs");
+const saltRounds = 8;
+
+//import and initialize knex for querry builder
+const knex = require("../db/knex");
 
 exports.seed = function(knex) {
   // Deletes ALL existing entries
@@ -5,9 +11,9 @@ exports.seed = function(knex) {
     .then(function () {
       // Inserts seed entries
       return knex('users').insert([
-        {username: 'cahyo', password: '12345'},
-        {username: 'dian', password: '12345'},
-        {username: 'widhi', password: '12345'},
+        {username: 'cahyo', password: bcrypt.hashSync('12345', saltRounds)},
+        {username: 'widhi', password: bcrypt.hashSync('12345', saltRounds)},
+        {username: 'dian', password: bcrypt.hashSync('12345', saltRounds)},
       ]);
     });
 };
