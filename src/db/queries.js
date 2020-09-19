@@ -15,7 +15,8 @@ module.exports = {
   },
 
   save(table, object) {
-    if (object.id !== null) {
+      console.log(typeof object.id);
+    if (object.id) {
       //if there is id then do update
       return knex(table).where({ id: object.id }).update(object);
     } else {

@@ -3,7 +3,7 @@ const bcrypt = require("bcryptjs");
 const saltRounds = 8;
 
 //import and initialize knex for querry builder
-const knex = require("../db/knex");
+const knex = require("../src/db/knex");
 
 exports.seed = function(knex) {
   // Deletes ALL existing entries

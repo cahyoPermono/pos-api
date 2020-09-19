@@ -21,6 +21,7 @@ router.post("/", (req, res) => {
     .save("product", req.body)
     .then((data) => res.json("success create product"))
     .catch((e) => {
+      console.log(e);
       res.status(400).json("Failed To Create Product");
     });
 });
@@ -47,13 +48,18 @@ router.get("/:id", (req, res) => {
 router.put("/:id", (req, res) => {
   //check is exist
   query.findOne("product", req.params.id).then((data) => {
-    if (data.length() > 0 || req.body.id) {
+    //fill id in body if not exist
+    req.body.id = data[0].id;
+
+    if (data.length > 0 || req.body.id) {
       query
         .save("product", req.body)
         .then((data) => {
           res.json("Successfully Update Product");
         })
-        .catch((e) => res.status(400).json("Failed Update Product"));
+        .catch((e) => {
+          res.status(400).json("Failed Update Product");
+        });
     } else {
       res
         .status(400)
