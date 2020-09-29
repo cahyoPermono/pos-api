@@ -2,7 +2,7 @@ exports.up = function (knex) {
   return knex.schema.createTable("product", function (table) {
     table.increments("id").primary();
     table.string("nama").notNullable();
-    table.string("barcode").notNullable();
+    table.string("barcode").defaultTo('-');
     table.integer("basePrice").notNullable();
     table.integer("sellingPrice").notNullable();
     table.decimal("quantity").notNullable().defaultTo(0);
