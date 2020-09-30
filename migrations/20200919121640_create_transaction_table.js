@@ -1,8 +1,8 @@
 exports.up = function (knex) {
   return knex.schema.createTable("transaction", function (table) {
     table.increments("id").primary();
-    table.integer("basePricetotal").notNullable();
-    table.integer("sellingPricetotal").notNullable();
+    table.integer("basePriceTotal").notNullable();
+    table.integer("sellingPriceTotal").notNullable();
     table.integer("totalDiscountProduct").defaultTo(0);
     table.integer("otherDiscount").defaultTo(0);
     table.integer("tax").defaultTo(0);
